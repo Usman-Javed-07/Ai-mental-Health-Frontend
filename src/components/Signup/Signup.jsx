@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import "../css/Signup.css"
 export const Signup = () => {
     const [formData, setFormData] = useState({
         username: "",
@@ -70,58 +70,82 @@ export const Signup = () => {
     };
     return (
         <div className="main-section">
-            <h1>Sign Up</h1>
-            <form className="form" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="username"
-                    required
-                    minLength="3"
-                    placeholder="Username"
-                    value={formData.username}
-                    onChange={handleChange}
-                />
-                <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-                {emailError && <p style={{ color: "red" }}>{emailError}</p>}
-                <input
-                    type="password"
-                    name="password"
-                    required
-                    minLength="6"
-                    placeholder="New Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    style={{
-                        borderColor: passwordError ? "red" : "",
-                    }}
-                />
-                <input
-                    type="password"
-                    name="confirmPassword"
-                    required
-                    minLength="6"
-                    placeholder="Confirm Password"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    style={{
-                        borderColor: passwordError ? "red" : "",
-                    }}
-                />
-                {passwordError && <p style={{ color: "red", marginTop: "-10px" }}>{passwordError}</p>}
-                <button type="submit">Sign Up</button>
-                <div className="have-an-account">
-                    <p>Already have an account?</p>
-                    <NavLink to="/">Login</NavLink>
-                </div>
-            </form>
-        </div>
+            <div className="signup-image">
+                     <img src="Logo.png" alt="signup image" />
+            </div>
+
+            <div className="signup">
+                <h1>Register</h1>
+                <form className="form" onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="username"
+                        required
+                        minLength="3"
+                        placeholder="Username"
+                        value={formData.username}
+                        onChange={handleChange}
+                    />
+                       {/* <input
+                        type="text"
+                        name="First Name"
+                        required
+                        minLength="3"
+                        placeholder="first name"
+                        // value={formData.username}
+                        // onChange={handleChange}
+                    />
+                       <input
+                        type="text"
+                        name="Last Name"
+                        required
+                        minLength="3"
+                        placeholder="last name"
+                        // value={formData.username}
+                        // onChange={handleChange}
+                    /> */}
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+                    {emailError && <p style={{ color: "red" }}>{emailError}</p>}
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                        minLength="6"
+                        placeholder="New Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        style={{
+                            borderColor: passwordError ? "red" : "",
+                        }}
+                    />
+                    <input
+                        type="password"
+                        name="confirmPassword"
+                        required
+                        minLength="6"
+                        placeholder="Confirm Password"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                        style={{
+                            borderColor: passwordError ? "red" : "",
+                        }}
+                    />
+                    {passwordError && <p style={{ color: "red", marginTop: "-10px" }}>{passwordError}</p>}
+                    <button type="submit" className="signup-btn">Sign Up</button>
+                    <div className="have-an-account">
+                        <p>Already have an account?</p>
+                        <NavLink to="/">Login</NavLink>
+                    </div>
+                </form>
+                        </div>
+            </div>
     );
 };
 
