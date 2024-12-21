@@ -138,7 +138,7 @@ export const Signup = () => {
                         }}
                     />
                     {passwordError && <p style={{ color: "red", marginTop: "-10px" }}>{passwordError}</p>}
-                    <button type="submit" className="signup-btn">Sign Up</button>
+                    <button type="submit" className="signup-btn">SignUp</button>
                     <div className="have-an-account">
                         <p>Already have an account?</p>
                         <NavLink to="/">Login</NavLink>
