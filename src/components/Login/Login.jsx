@@ -1,130 +1,75 @@
 
-// import { useNavigate } from "react-router-dom";
-// import { useState } from "react";
-// import axios from "axios";
-
-// export const Login = () => {
-  
-//   const [formData, setFormData] = useState({ username: "", password: "" });
-//   const [error, setError] = useState("");
-//   const navigate = useNavigate();
-
-//   const handleChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await axios.post("http://localhost:5000/api/users/login", formData);
-
-//       // Store the token in localStorage for future API calls
-//       localStorage.setItem("token", response.data.token);
-//       console.log(response.data.token)
-//       alert(response.data.message || "Login successful!");
-
-//       // Navigate to the desired page
-//       navigate("/UserData");
-//     } catch (err) {
-//       setError(err.response?.data?.message || "An error occurred during login");
-//     }
-//   };
-
-//   return (
-//     <div className="main-section">
-//       <h1>Login</h1>
-//       <form className="form" onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           name="username"
-//           required
-//           placeholder="Username"
-//           value={formData.username}
-//           onChange={handleChange}
-//         />
-//         <input
-//           type="password"
-//           name="password"
-//           required
-//           placeholder="Password"
-//           value={formData.password}
-//           onChange={handleChange}
-//         />
-//         <button type="submit">Login</button>
-//         {error && <p className="error" style={{ color: "red" }}>{error}</p>}
-//         <p>Don&apos;t have an account?</p>
-//         <a className="back" href="/SignUp">
-//           Signup
-//         </a>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
-
-
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import styles from "../css/Login.module.css";
 
 export const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" }); // Changed username to email
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+    const [formData, setFormData] = useState({ email: "", password: "" });
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:5000/api/users/login", formData);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:5000/api/users/login", formData);
 
-      // Store the token in localStorage for future API calls
-      localStorage.setItem("token", response.data.token);
-      console.log(response.data.token);
-      alert(response.data.message || "Login successful!");
+            // Store the token in localStorage for future API calls
+            localStorage.setItem("token", response.data.token);
+            console.log(response.data.token);
+            alert(response.data.message || "Login successful!");
 
-      // Navigate to the desired page
-      navigate("/UserData");
-    } catch (err) {
-      setError(err.response?.data?.message || "An error occurred during login");
-    }
-  };
+            // Navigate to the desired page
+            navigate("/UserData");
+        } catch (err) {
+            setError(err.response?.data?.message || "An error occurred during login");
+        }
+    };
 
-  return (
-    <div className="main-section">
-      <h1>Login</h1>
-      <form className="form" onSubmit={handleSubmit}>
-        <input
-          type="email" // Changed type to email
-          name="email" // Changed name to email
-          required
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          required
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        <button type="submit">Login</button>
-        {error && <p className="error" style={{ color: "red" }}>{error}</p>}
-        <p>Don&apos;t have an account?</p>
-        <a className="back" href="/SignUp">
-          Signup
-        </a>
-      </form>
-    </div>
-  );
+    return (
+        <div className={styles.MainSectionLogin}>
+            <div className={styles.LoginFormData}>
+                <div className={styles.LoginImage}>
+                    <img src="mainLogo.png" alt="login image" />
+                </div>
+                <div className={styles.Login}>
+                    <h1>Login</h1>
+                    <form className={styles.Form} onSubmit={handleSubmit}>
+                        <input
+                            className={styles.Input}
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="Email"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                        <input
+                            className={styles.Input}
+                            type="password"
+                            name="password"
+                            required
+                            placeholder="Password"
+                            value={formData.password}
+                            onChange={handleChange}
+                        />
+                        <button className={styles.loginBtn} type="submit">Login</button>
+                        {error && <p className={styles.noAccount}>{error}</p>}
+                        <div className={styles.newUser}>
+                        <p>Don&apos;t have an account?</p>
+                        <a className={styles.goToSignUp} href="/SignUp">
+                            Signup
+                        </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Login;
