@@ -20,3 +20,12 @@
 => Dependencies install to run frontend 
      1) npm install react-router-dom
      2) npm install axios# Ai-mental-Health-Frontend
+
+
+=> tousts installing setup
+     1)  npm i react-toastify
+     2)  import below file in main jsx 
+     3)  import { ToastContainer} from 'react-toastify';
+     4)  import the below file in main jsx inside the strictmode 
+     5)  <ToastContainer />
+

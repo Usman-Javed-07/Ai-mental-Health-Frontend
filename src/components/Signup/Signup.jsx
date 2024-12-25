@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "../css/Signup.module.css";
+import { toast } from 'react-toastify';
 
 export const Signup = () => {
     const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ export const Signup = () => {
 
         if (name === "FirstName" || name === "LastName") {
             if (!nameRegex.test(value)) {
-                setNameError("Names should only contain letters.");
+                setNameError("Name should only contain letters.");
             } else {
                 setNameError("");
             }
@@ -51,16 +52,19 @@ export const Signup = () => {
 
         if (formData.password !== formData.confirmPassword) {
             setPasswordError("Passwords do not match!");
+            toast.error("Passwords do not match!")
             return;
         }
 
         if (!formData.FirstName || !formData.LastName) {
             setFormError("FirstName and LastName are required!");
+            toast.info("FirstName and LastName are required!")
             return;
         }
 
         if (nameError) {
             setFormError("Please correct the name fields.");
+            toast.info("Please correct the name fields.")
             return;
         }
 
@@ -74,11 +78,12 @@ export const Signup = () => {
             const { token, message } = response.data;
 
             localStorage.setItem("token", token);
-            alert(message || "Signup successful!");
+            toast.success(message || "Signup successful!");
 
             navigate("/");
         } catch (err) {
             const errorMessage = err.response?.data?.message || "Error signing up";
+            toast.error("Error signing up")
             setPasswordError(errorMessage);
         }
     };

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import styles from "../css/Login.module.css";
+import { toast } from 'react-toastify';
+
 
 export const Login = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });
@@ -21,12 +23,13 @@ export const Login = () => {
             // Store the token in localStorage for future API calls
             localStorage.setItem("token", response.data.token);
             console.log(response.data.token);
-            alert(response.data.message || "Login successful!");
+            toast.success(response.data.message || "Login successful!");
 
             // Navigate to the desired page
             navigate("/UserData");
         } catch (err) {
             setError(err.response?.data?.message || "An error occurred during login");
+            toast.error("An error occurred during login")
         }
     };
 
