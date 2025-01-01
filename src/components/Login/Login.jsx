@@ -26,7 +26,7 @@ export const Login = () => {
             toast.success(response.data.message || "Login successful!");
 
             // Navigate to the desired page
-            navigate("/UserData");
+            navigate("/Home");
         } catch (err) {
             setError(err.response?.data?.message || "An error occurred during login");
             toast.error("An error occurred during login")
