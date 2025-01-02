@@ -1,32 +1,26 @@
 
-// import { NavLink } from "react-router-dom";
-// export const Header = () => {
-//     return (
-//         <div className="header-section">
-//                <nav className="navbar">
-//                  <ul>
-//                    <li><NavLink to="/Home">Home</NavLink></li>
-//                    <li><NavLink to="/About">About</NavLink></li>
-//                    <li><NavLink to="/Music">Music</NavLink></li>
-//                    <li><NavLink to="/Vedios">Vedios</NavLink></li>
-//                    <li><NavLink to="/Contact">Contact</NavLink></li>
-//                  </ul>
-//                </nav>
-//         </div>
-//     )
-// }
-
 import { NavLink } from "react-router-dom";
+import "../css/Header.module.css"
 
 export const Header = () => {
   return (
+
     <nav>
+      <div>
+        <img src="./public/NavLogo.png" alt="website logo" />
+      </div>
+      <div>
       <NavLink to="/Home">Home</NavLink>
       <NavLink to="/About">About</NavLink>
       <NavLink to="/Contact">Contact</NavLink>
       <NavLink to="/Music">Music</NavLink>
-      <NavLink to="/Vedios">Vedios</NavLink>
+      <NavLink to="/Vedios">Video</NavLink>
+      <NavLink to="/Articals">Articals</NavLink>
+      <NavLink to="/Logout">Logout</NavLink>
+      </div>
     </nav>
   );
 };
+
+
 
