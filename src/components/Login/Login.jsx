@@ -4,11 +4,12 @@ import { useState } from "react";
 import axios from "axios";
 import styles from "../css/Login.module.css";
 import { toast } from 'react-toastify';
-
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 export const Login = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });
     const [error, setError] = useState("");
+    const [showPassword, setShowPassword] = useState(false); 
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -51,22 +52,30 @@ export const Login = () => {
                             value={formData.email}
                             onChange={handleChange}
                         />
-                        <input
-                            className={styles.Input}
-                            type="password"
-                            name="password"
-                            required
-                            placeholder="Password"
-                            value={formData.password}
-                            onChange={handleChange}
-                        />
+                        <div className={styles.passwordContainer}>
+                            <input
+                                className={styles.Input}
+                                type={showPassword ? "text" : "password"} 
+                                name="password"
+                                required
+                                placeholder="Password"
+                                value={formData.password}
+                                onChange={handleChange}
+                            />
+                            <span
+                                className={styles.eyeIcon}
+                                onClick={() => setShowPassword(!showPassword)} 
+                            >
+                                {showPassword ? <FaEyeSlash /> : <FaEye />} 
+                            </span>
+                        </div>
                         <button className={styles.loginBtn} type="submit">Login</button>
                         {error && <p className={styles.noAccount}>{error}</p>}
                         <div className={styles.newUser}>
-                        <p>Don&apos;t have an account?</p>
-                        <a className={styles.goToSignUp} href="/SignUp">
-                            Signup
-                        </a>
+                            <p>Don&apos;t have an account?</p>
+                            <a className={styles.goToSignUp} href="/SignUp">
+                                Signup
+                            </a>
                         </div>
                     </form>
                 </div>

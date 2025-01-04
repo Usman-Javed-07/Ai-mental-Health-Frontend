@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "../css/Signup.module.css";
 import { toast } from 'react-toastify';
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 export const Signup = () => {
     const [formData, setFormData] = useState({
@@ -17,6 +19,8 @@ export const Signup = () => {
     const [passwordError, setPasswordError] = useState("");
     const [formError, setFormError] = useState("");
     const [nameError, setNameError] = useState("");
+    const [showPassword, setShowPassword] = useState(false); 
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false); 
 
     const navigate = useNavigate();
 
@@ -135,26 +139,46 @@ export const Signup = () => {
                             onChange={handleChange}
                         />
                         {emailError && <p className={styles.errorText}>{emailError}</p>}
-                        <input
-                            type="password"
-                            name="password"
-                            required
-                            minLength="6"
-                            placeholder="New Password"
-                            value={formData.password}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="password"
-                            name="confirmPassword"
-                            required
-                            minLength="6"
-                            placeholder="Confirm Password"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
-                        />
+
+                        <div className={styles.passwordContainer}>
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                required
+                                minLength="6"
+                                placeholder="New Password"
+                                value={formData.password}
+                                onChange={handleChange}
+                            />
+                            <span
+                                className={styles.eyeIcon}
+                                onClick={() => setShowPassword(!showPassword)} 
+                            >
+                                {showPassword ? <FaEyeSlash /> : <FaEye />} 
+                            </span>
+                        </div>
+
+                        <div className={styles.passwordContainer}>
+                            <input
+                                type={showConfirmPassword ? "text" : "password"} 
+                                name="confirmPassword"
+                                required
+                                minLength="6"
+                                placeholder="Confirm Password"
+                                value={formData.confirmPassword}
+                                onChange={handleChange}
+                            />
+                            <span
+                                className={styles.eyeIcon}
+                                onClick={() => setShowConfirmPassword(!showConfirmPassword)} 
+                            >
+                                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />} 
+                            </span>
+                        </div>
+
                         {passwordError && <p className={styles.errorText}>{passwordError}</p>}
                         {formError && <p className={styles.errorText}>{formError}</p>}
+
                         <button type="submit" className={styles.signupBtn}>
                             Sign Up
                         </button>
