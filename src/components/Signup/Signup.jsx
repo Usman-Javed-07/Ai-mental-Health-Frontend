@@ -26,6 +26,7 @@ export const Signup = () => {
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const nameRegex = /^[A-Za-z]+$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/; 
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -44,31 +45,48 @@ export const Signup = () => {
                 setNameError("");
             }
         }
+
+        // Validate password format on change
+        if (name === "password" && !passwordRegex.test(value)) {
+            setPasswordError("Password must be at least 6 characters, include 1 uppercase letter, 1 number, and 1 special character.");
+        } else {
+            setPasswordError("");
+        }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Validate email
         if (!emailRegex.test(formData.email)) {
             setEmailError("Please enter a valid email address.");
             return;
         }
 
+        // Validate password and confirm password match
         if (formData.password !== formData.confirmPassword) {
             setPasswordError("Passwords do not match!");
-            toast.error("Passwords do not match!")
+            toast.error("Passwords do not match!");
             return;
         }
 
+        // Validate password format
+        if (!passwordRegex.test(formData.password)) {
+            setPasswordError("Password must be at least 6 characters, include 1 uppercase letter, 1 number, and 1 special character.");
+            toast.error("Password is not strong enough!");
+            return;
+        }
+
+        // Validate first and last name
         if (!formData.FirstName || !formData.LastName) {
             setFormError("FirstName and LastName are required!");
-            toast.info("FirstName and LastName are required!")
+            toast.info("FirstName and LastName are required!");
             return;
         }
 
         if (nameError) {
             setFormError("Please correct the name fields.");
-            toast.info("Please correct the name fields.")
+            toast.info("Please correct the name fields.");
             return;
         }
 
@@ -87,7 +105,7 @@ export const Signup = () => {
             navigate("/");
         } catch (err) {
             const errorMessage = err.response?.data?.message || "Error signing up";
-            toast.error("Error signing up")
+            toast.error("Error signing up");
             setPasswordError(errorMessage);
         }
     };
@@ -142,7 +160,7 @@ export const Signup = () => {
 
                         <div className={styles.passwordContainer}>
                             <input
-                                type={showPassword ? "text" : "password"}
+                                type={showPassword ? "text" : "password"} 
                                 name="password"
                                 required
                                 minLength="6"
@@ -154,13 +172,13 @@ export const Signup = () => {
                                 className={styles.eyeIcon}
                                 onClick={() => setShowPassword(!showPassword)} 
                             >
-                                {showPassword ? <FaEyeSlash /> : <FaEye />} 
+                                {showPassword ? <FaEyeSlash /> : <FaEye />}
                             </span>
                         </div>
 
                         <div className={styles.passwordContainer}>
                             <input
-                                type={showConfirmPassword ? "text" : "password"} 
+                                type={showConfirmPassword ? "text" : "password"}
                                 name="confirmPassword"
                                 required
                                 minLength="6"
@@ -170,9 +188,9 @@ export const Signup = () => {
                             />
                             <span
                                 className={styles.eyeIcon}
-                                onClick={() => setShowConfirmPassword(!showConfirmPassword)} 
+                                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                             >
-                                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />} 
+                                {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                             </span>
                         </div>
 
