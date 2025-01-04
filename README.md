@@ -29,3 +29,5 @@
      4)  import the below file in main jsx inside the strictmode 
      5)  <ToastContainer />
 
+=> install react icon 
+     1) npm i react-icons
