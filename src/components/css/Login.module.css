@@ -15,7 +15,7 @@
 .LoginImage {
     flex: 1;
     height: 100%;
-    background-color: #021938;   /*  this is the place where you can chnage the color theme*/
+    background-color: #021938;   
     display: flex;
     justify-content: center;
     align-items: center;
