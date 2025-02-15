@@ -31,3 +31,8 @@
 
 => install react icon 
      1) npm i react-icons
+
+=> Service use for sending email to website admin is 
+
+      1) Email Services 
+      2) https://dashboard.emailjs.com/admin     

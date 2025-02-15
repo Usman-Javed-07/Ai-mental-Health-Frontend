@@ -28,6 +28,8 @@ export const Signup = () => {
     const nameRegex = /^[A-Za-z]+$/;
     const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/; 
 
+
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });

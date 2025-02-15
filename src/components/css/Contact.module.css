@@ -1,0 +1,186 @@
+.contactSection {
+  color: #333;
+  padding: 20px;
+  background: linear-gradient(to bottom, #f9f9f9, #fff);
+}
+
+.contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contactHeading {
+  color: #2575fc;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+
+.heroSection {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.inputField,
+.textArea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.textArea {
+  height: 120px;
+  resize: none;
+}
+
+.submitButton {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.submitButton:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+.contactDetails {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contactDetails h3 {
+  color: #2575fc;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.faqSection {
+  margin-top: 30px;
+}
+
+.faqSection h3 {
+  color: #2575fc;
+  font-size: 2rem;
+  padding-left: 10px;
+
+}
+.summaryPara {
+  margin-top: 10px;
+}
+details {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+details summary {
+  font-weight: bold;
+}
+
+.mapContainer {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.socialMedia {
+  margin-top: 30px;
+  text-align: center;
+}
+.socialMedia h3 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #2575fc;
+}
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.socialIcons a {
+  font-size: 1.5rem;
+  color: #2575fc;
+  transition: 0.3s ease-in-out;
+}
+
+.socialIcons a:hover {
+  color: #6a11cb !important;
+}
+textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.8);
+  outline: none;
+}
+.fbIcon {
+  color: #2575fc !important;
+}
+.twitIcon {
+  color: #333 !important;
+  
+}
+.instaIcon {
+  color: #FD1D1D !important; 
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+  .contactHeading {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+  }
+
+  .contactDetails h3,
+  .faqSection h3 {
+    font-size: 1.5rem;
+  }
+  .socialMedia h3 {
+    font-size: 1.5rem;
+  }
+
+  .inputField,
+  .textArea {
+    font-size: 0.9rem;
+  }
+}

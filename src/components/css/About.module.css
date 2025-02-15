@@ -1,0 +1,71 @@
+.container {
+    color: #333;
+    padding: 20px;
+    background: linear-gradient(to bottom, #f9f9f9, #fff);
+  }
+  
+  .heroSection {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .tagline {
+    font-size: 1.25rem;
+    margin-top: 10px;
+  }
+  
+  .contentSection {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sectionWrapper {
+    margin-bottom: 30px;
+  }
+  
+  .sectionHeading {
+    font-size: 2rem;
+    color: #2575fc;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  .list {
+    margin: 10px 0;
+    padding-left: 20px;
+    list-style: disc;
+  }
+  
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 2rem;
+    }
+  
+    .tagline {
+      font-size: 1rem;
+    }
+  
+    .sectionHeading {
+      font-size: 1.5rem;
+    }
+  
+    .text {
+      font-size: 0.9rem;
+    }
+  }
+  
+  
