@@ -1,0 +1,129 @@
+/* Music Container */
+.musicContainer {
+    padding: 20px;
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #f9f9f9, #fff);
+
+  }
+  
+  /* Search Bar */
+  .searchBar {
+    width: 60%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    outline: none;
+    color: #2575fc;
+    text-align: center;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #6a11cb, #2575fc);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .searchBar:focus {   
+    box-shadow: 0px 0px 10px rgba(106, 17, 203, 0.8), 0px 0px 20px rgba(37, 117, 252, 0.6);
+    transform: scale(1.02);
+  }
+  
+  ::placeholder {
+    color: #6a11cb;
+  }
+  /* Music Grid */
+  .musicGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 80%;
+    justify-content: center;
+  }
+  
+  /* Music Card */
+  .musicCard {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .musicCard:hover {
+    transform: scale(1.05);
+    background: #333;
+  }
+  
+  /* Music Image */
+  .musicImage {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Music Title */
+  .musicTitle {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  /* Full-Screen Player */
+  .fullScreenPlayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  /* Close Button */
+  .closeButton {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .closeButton:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Player Image */
+  .playerImage {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* Player Title */
+  .playerTitle {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  /* Audio Player */
+  .audioPlayer {
+    width: 80%;
+    max-width: 400px;
+  }
+  

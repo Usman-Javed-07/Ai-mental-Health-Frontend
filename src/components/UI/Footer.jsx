@@ -26,7 +26,7 @@ export const Footer = () => {
                     </ul>
                 </div>
                 <div className={styles.footerBottom}>
-                    <p>&copy; 2025 AI Mental Health Therapist. All Rights Reserved.</p>
+                    <p>&copy;2024 - 2025 AI Mental Health Therapist. All Rights Reserved.</p>
                     <div className={styles.footerDisclaimer}>
                         <p>This platform offers AI-based mental health support. For emergencies, please consult a licensed healthcare professional.</p>
                     </div>
