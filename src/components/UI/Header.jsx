@@ -19,7 +19,7 @@ export const Header = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <img src="./public/NavLogo.png" alt="website logo" />
+        <img src="/NavLogo.png" alt="website logo" />
       </div>
       <ul
         className={`${styles.navLinks} ${
