@@ -10,19 +10,16 @@ html {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px; 
-  border-radius: 10px;
+  width: 5px; 
 }
 
 ::-webkit-scrollbar-track {
   background: #f5f5f5; 
-  border-radius: 10px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); 
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #6a11cb, #2575fc);
-  border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
 

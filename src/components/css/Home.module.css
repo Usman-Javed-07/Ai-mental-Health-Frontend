@@ -1,0 +1,51 @@
+.homeSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.homeImage img {
+    width: 200px;
+    height: 200px;
+}
+.homeInput {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    border: 2px solid #000;
+    padding: 5px 20px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+}
+.aiInput {
+    border: none;
+}
+.aiInput:active {
+    border: none;
+}
+.aiInput:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none;
+}
+.aiBtn {
+    border: none;
+    background: transparent;
+  
+}
+.aiSendBtn {
+    width: 25px;
+    height: 25px;
+    color: blueviolet;
+    
+}
