@@ -10,6 +10,7 @@ import { Music } from "./pages/Music";
 import { Vedios } from "./pages/Vedios";
 import { Articals } from "./pages/Articals";
 import { AddMusic } from "./pages/AddMusic";
+import { AddVideo } from "./pages/AddVideo";
 import Loader from "./components/Loader/Loader";
 import PrivateRoute from "./components/Layouts/PrivateRoute"; // Import PrivateRoute
 import { AuthProvider } from "./components/context/AuthContext"; // Import AuthProvider
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "AddMusic",
         element: <PrivateRoute element={<AddMusic />} />,
+      },
+      {
+        path: "AddVideo",
+        element: <PrivateRoute element={<AddVideo />} />,
       }
     ],
   },
