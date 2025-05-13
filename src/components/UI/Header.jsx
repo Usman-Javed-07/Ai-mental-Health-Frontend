@@ -50,9 +50,13 @@ export const Header = () => {
         <li>
           <NavLink to="/AddVideo">Add New Video</NavLink>
         </li>
+         <li>
+          <NavLink to="/AddArticle">Add New Article</NavLink>
+        </li>
         <li>
           <NavLink className={styles.logout} to="/"> <IoMdLogOut /> Logout</NavLink>
         </li>
+        
       </ul>
       <div className={styles.hamburger} onClick={handleButtonToggle}>
         {isMenuOpen ? <IoCloseCircleOutline /> : <IoIosMenu />}
