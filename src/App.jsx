@@ -9,6 +9,7 @@ import { Contact } from "./pages/Contact";
 import { Music } from "./pages/Music";
 import { Vedios } from "./pages/Vedios";
 import { Articals } from "./pages/Articals";
+import { AddMusic } from "./pages/AddMusic";
 import Loader from "./components/Loader/Loader";
 import PrivateRoute from "./components/Layouts/PrivateRoute"; // Import PrivateRoute
 import { AuthProvider } from "./components/context/AuthContext"; // Import AuthProvider
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
         path: "Articals",
         element: <PrivateRoute element={<Articals />} />,
       },
+      {
+        path: "AddMusic",
+        element: <PrivateRoute element={<AddMusic />} />,
+      }
     ],
   },
 ]);

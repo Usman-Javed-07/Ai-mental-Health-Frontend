@@ -45,6 +45,9 @@ export const Header = () => {
           <NavLink to="/Articals">Articles</NavLink>
         </li>
         <li>
+          <NavLink to="/AddMusic">Add New Music</NavLink>
+        </li>
+        <li>
           <NavLink className={styles.logout} to="/"> <IoMdLogOut /> Logout</NavLink>
         </li>
       </ul>
