@@ -9,12 +9,15 @@ import { useAuth } from "../context/AuthContext";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useAuth(); 
+  const { user, loading } = useAuth();
+
 
   // Toggle the menu open/close state
   const handleButtonToggle = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
+  if (loading) return null; // or return a loading spinner if desired
+
   console.log("Logged in user:", user);
 
   return (
