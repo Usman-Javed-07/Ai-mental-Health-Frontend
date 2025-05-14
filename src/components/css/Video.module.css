@@ -1,0 +1,101 @@
+.videoContainer {
+  padding: 20px;
+  min-height: 100vh;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #f9f9f9, #fff);
+}
+
+/* Search Bar */
+.searchBar {
+  width: 60%;
+  padding: 18px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #dbd7d7;
+  transition: all 0.3s ease;
+}
+
+/* Grid Layout */
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 80%;
+  gap: 20px;
+  justify-content: center;
+}
+
+.videoCard {
+  cursor: pointer;
+  padding: 20px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.videoCard:hover {
+  border: 1px solid #00000032;
+}
+
+.videoPreview {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.videoTitle {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Full-Screen Player */
+.fullScreenPlayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.closeButton:hover {
+  transform: scale(1.2);
+}
+
+.playerTitle {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.fullVideoPlayer {
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.noVideos {
+  font-size: 18px;
+  color: #666;
+}
