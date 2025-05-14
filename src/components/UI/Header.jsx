@@ -5,16 +5,17 @@ import { IoIosMenu } from "react-icons/io";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoMdLogOut } from "react-icons/io";
 import styles from "../css/Header.module.css";
+import { useAuth } from "../context/AuthContext";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+  const { user } = useAuth(); 
 
   // Toggle the menu open/close state
   const handleButtonToggle = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
-  
+  console.log("Logged in user:", user);
 
   return (
     <nav className={styles.navbar}>
@@ -44,15 +45,21 @@ export const Header = () => {
         <li>
           <NavLink to="/Articals">Articles</NavLink>
         </li>
-        <li>
-          <NavLink to="/AddMusic">Add New Music</NavLink>
-        </li>
-        <li>
-          <NavLink to="/AddVideo">Add New Video</NavLink>
-        </li>
-         <li>
-          <NavLink to="/AddArticle">Add New Article</NavLink>
-        </li>
+
+
+     {user?.role === "admin" && (
+  <>
+    <li>
+      <NavLink to="/AddMusic">Add New Music</NavLink>
+    </li>
+    <li>
+      <NavLink to="/AddVideo">Add New Video</NavLink>
+    </li>
+    <li>
+      <NavLink to="/AddArticle">Add New Article</NavLink>
+    </li>
+  </>
+)}
         <li>
           <NavLink className={styles.logout} to="/"> <IoMdLogOut /> Logout</NavLink>
         </li>

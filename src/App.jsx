@@ -13,6 +13,8 @@ import { AddMusic } from "./pages/AddMusic";
 import { AddVideo } from "./pages/AddVideo";
 import { AddArticle } from "./pages/AddArticle";
 import Loader from "./components/Loader/Loader";
+import AdminRoute from "./components/Layouts/AdminRoute";
+
 import PrivateRoute from "./components/Layouts/PrivateRoute"; // Import PrivateRoute
 import { AuthProvider } from "./components/context/AuthContext"; // Import AuthProvider
 
@@ -70,15 +72,15 @@ const router = createBrowserRouter([
       },
       {
         path: "AddMusic",
-        element: <PrivateRoute element={<AddMusic />} />,
+        element: <AdminRoute element={<AddMusic />} />,
       },
       {
         path: "AddVideo",
-        element: <PrivateRoute element={<AddVideo />} />,
+        element: <AdminRoute element={<AddVideo />} />,
       },
        {
         path: "AddArticle",
-        element: <PrivateRoute element={<AddArticle />} />,
+        element: <AdminRoute element={<AddArticle />} />,
       }
     ],
   },

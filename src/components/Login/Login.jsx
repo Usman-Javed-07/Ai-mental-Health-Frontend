@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -16,23 +15,36 @@ export const Login = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post("http://localhost:5000/api/users/login", formData);
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await axios.post("http://localhost:5000/api/users/login", formData);
 
-            // Store the token in localStorage for future API calls
-            localStorage.setItem("token", response.data.token);
-            console.log(response.data.token);
-            toast.success(response.data.message || "Login successful!");
+        // Destructure the response to get the user object and token
+        const { user, token } = response.data;
 
-            // Navigate to the desired page
-            navigate("/Home");
-        } catch (err) {
-            setError(err.response?.data?.message || "An error occurred during login");
-            toast.error("An error occurred during login")
-        }
-    };
+        // Combine the token and user data
+        const userData = {
+            ...user,
+            token,
+        };
+
+        // Save full user data in localStorage
+        localStorage.setItem("user", JSON.stringify(userData));
+        console.log("Logged in user:", userData);  // Check the full user object
+
+        toast.success(response.data.message || "Login successful!");
+
+        // Navigate to the Home page after login
+        navigate("/Home");
+    } catch (err) {
+        // Handle any errors during login
+        setError(err.response?.data?.message || "An error occurred during login");
+        toast.error("An error occurred during login");
+    }
+};
+
+
 
     return (
         <div className={styles.MainSectionLogin}>
