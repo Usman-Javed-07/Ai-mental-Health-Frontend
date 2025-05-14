@@ -52,7 +52,7 @@ export const Contact = () => {
     <div className={styles.contactContainer}>
       <h2 className={styles.contactHeading}>Contact Us</h2>
       <p>We&apos;d love to hear from you! Feel free to reach out using the form below.</p>
-
+         <div className={styles.contactUsSection}>
       <form className={styles.contactForm} onSubmit={sendEmail}>
         <input
           type="text"
@@ -82,6 +82,11 @@ export const Contact = () => {
         />
         <button type="submit" className={styles.submitButton}>Send Message</button>
       </form>
+      <div className={styles.contactImage}>
+        <img src="./contact.jpg" alt="contact image" />
+        </div>
+      </div>
+
       <div className={styles.contactDetails}>
           <h3>Our Contact Information</h3>
           <p><strong>Email:</strong> support@mindcare.com</p>

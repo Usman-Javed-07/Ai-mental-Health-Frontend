@@ -1,17 +1,13 @@
 .container {
     color: #333;
-    padding: 20px;
-    background: linear-gradient(to bottom, #f9f9f9, #fff);
+    padding: 30px;
   }
   
   .heroSection {
     text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #444;
     margin-bottom: 40px;
+    margin-top: 40px;
   }
   
   .heading {
@@ -34,8 +30,8 @@
   }
   
   .sectionHeading {
-    font-size: 2rem;
-    color: #2575fc;
+    font-size: 1.4rem;
+    color: #444;
     margin-bottom: 10px;
   }
   

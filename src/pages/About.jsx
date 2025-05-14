@@ -44,28 +44,6 @@ export const About = () => {
           </div>
   
           <div className={styles.sectionWrapper}>
-            <h2 className={styles.sectionHeading}>Technology Stack</h2>
-            <p className={styles.text}>
-              Built using modern web technologies, MindCare ensures a seamless user experience with the 
-              following stack:
-            </p>
-            <ul className={styles.list}>
-              <li>
-                <strong>Front-end:</strong> React, HTML, CSS, and JavaScript for a responsive and dynamic UI.
-              </li>
-              <li>
-                <strong>Back-end:</strong> Node.js and Express.js to handle secure user data and API requests.
-              </li>
-              <li>
-                <strong>Database:</strong> MongoDB to store user information and conversation history.
-              </li>
-              <li>
-                <strong>AI:</strong> OpenAI GPT Apis to drive meaningful interactions.
-              </li>
-            </ul>
-          </div>
-  
-          <div className={styles.sectionWrapper}>
             <h2 className={styles.sectionHeading}>Why Choose MindCare?</h2>
             <p className={styles.text}>
               Mental health is a critical aspect of overall well-being, and we aim to make support more 
