@@ -3,7 +3,7 @@ export const About = () => {
     return (
         <div className={styles.container}>
         <div className={styles.heroSection}>
-          <h1 className={styles.heading}>Welcome to MindCare</h1>
+          <h1 className={styles.heading}>About Us</h1>
           <p className={styles.tagline}>
             Revolutionizing Mental Health Support with AI Technology
           </p>
