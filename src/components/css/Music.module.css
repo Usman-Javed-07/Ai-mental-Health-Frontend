@@ -13,24 +13,15 @@
   /* Search Bar */
   .searchBar {
     width: 60%;
-    padding: 12px;
-    margin-bottom: 20px;
+    padding: 18px;
+    margin-bottom: 50px;
     font-size: 16px;
-    border-radius: 25px;
     outline: none;
-    color: #2575fc;
     text-align: center;
-    border: 2px solid transparent;
-    background-clip: padding-box, border-box;
-    background-origin: border-box;
-    background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #6a11cb, #2575fc);
-    transition: all 0.3s ease-in-out;
+     border: 1px solid #dbd7d7;
+    transition: all 0.3s ease;
   }
   
-  .searchBar:focus {   
-    box-shadow: 0px 0px 10px rgba(106, 17, 203, 0.8), 0px 0px 20px rgba(37, 117, 252, 0.6);
-    transform: scale(1.02);
-  }
   
   /* Music Grid */
   .musicGrid {
