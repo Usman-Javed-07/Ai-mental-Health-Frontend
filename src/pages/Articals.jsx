@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import styles from "../components/css/Article.module.css"; 
 
 export const Articals = () => {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -19,19 +21,32 @@ export const Articals = () => {
     fetchArticles();
   }, []);
 
+  const filteredArticles = articles.filter((article) =>
+    article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    article.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Welcome to Articles</h1>
-      {error && <p>{error}</p>}
-      {articles.length === 0 ? (
-        <p>No articles available.</p>
+    <div className={styles.articleContainer}>
+      <input
+        type="text"
+        placeholder="Search by title or category..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className={styles.searchBar}
+      />
+
+      {error && <p className={styles.error}>{error}</p>}
+
+      {filteredArticles.length === 0 ? (
+        <p className={styles.noArticles}>No articles found.</p>
       ) : (
-        articles.map((article) => (
-          <div key={article._id} style={{ marginBottom: "30px" }}>
-            <h2>{article.title}</h2>
-            <p style={{ fontStyle: "italic", color: "gray" }}>{article.category}</p>
-            <p>{article.content}</p>
-            <hr />
+        filteredArticles.map((article) => (
+          <div key={article._id} className={styles.articleCard}>
+            <h2 className={styles.title}>{article.title}</h2>
+            <p className={styles.category}>{article.category}</p>
+            <p className={styles.content}>{article.content}</p>
+            <hr className={styles.divider} />
           </div>
         ))
       )}
