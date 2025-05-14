@@ -4,12 +4,16 @@ import axios from "axios";
 import styles from "../css/Login.module.css";
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa"; 
+import { useAuth } from "../context/AuthContext";
+
 
 export const Login = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false); 
     const navigate = useNavigate();
+    const { login } = useAuth();
+
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,30 +23,23 @@ const handleSubmit = async (e) => {
     e.preventDefault();
     try {
         const response = await axios.post("http://localhost:5000/api/users/login", formData);
-
-        // Destructure the response to get the user object and token
         const { user, token } = response.data;
 
-        // Combine the token and user data
         const userData = {
             ...user,
             token,
         };
 
-        // Save full user data in localStorage
-        localStorage.setItem("user", JSON.stringify(userData));
-        console.log("Logged in user:", userData);  // Check the full user object
-
+        login(userData); // ✅ update AuthContext
         toast.success(response.data.message || "Login successful!");
 
-        // Navigate to the Home page after login
         navigate("/Home");
     } catch (err) {
-        // Handle any errors during login
         setError(err.response?.data?.message || "An error occurred during login");
         toast.error("An error occurred during login");
     }
 };
+
 
 
 
