@@ -1,13 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import { ToastContainer } from 'react-toastify';
-import './index.css'
-import App from './App.jsx'
+import './index.css';
+import App from './App.jsx';
+import { AuthProvider } from '../src/components/context/AuthContext.jsx'; // ✅ import your context
 
 createRoot(document.getElementById('root')).render(
-  
   <StrictMode>
-    <ToastContainer />
-    <App />
-  </StrictMode>,
-)
+    <AuthProvider> {/* ✅ wrap everything inside AuthProvider */}
+      <ToastContainer />
+      <App />
+    </AuthProvider>
+  </StrictMode>
+);
