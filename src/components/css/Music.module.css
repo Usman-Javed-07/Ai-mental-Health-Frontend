@@ -32,9 +32,6 @@
     transform: scale(1.02);
   }
   
-  ::placeholder {
-    color: #6a11cb;
-  }
   /* Music Grid */
   .musicGrid {
     display: grid;

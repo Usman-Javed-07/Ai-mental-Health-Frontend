@@ -7,7 +7,9 @@
 }
 
 .signup h1 {
-    color: #0186ff;
+    color: #333;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 .signupFormData {
@@ -19,7 +21,7 @@
 .signupImage {
     flex: 1;
     height: 100%;
-    background-color: #021938;  /*  this is the place where you can chnage the color theme*/
+    background-color: #222;  /*  this is the place where you can chnage the color theme*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,33 +51,31 @@
 }
 
 input {
-    padding: 15px;
+    padding: 18px;
     width: 100%;
     max-width: 600px;
-    border-radius: 5px;
-    border: 1px solid #0d4998;
+    border: 1px solid #dbd7d7;
     transition: all 0.3s ease;
 }
 
 input:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.8);
+    border-color: #7a7878;
+    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
     outline: none;
 }
 
 .signupBtn {
-    padding: 15px;
-    border-radius: 40px;
+    padding: 18px;
     border: none;
     cursor: pointer;
     font-size: 1.1rem;
     color: #fff;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    background: #333;
     transition: 0.4s ease-in-out;
 }
 
 .signupBtn:hover {
-    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    background: #111;
 }
 
 .haveAnAccount {
@@ -83,22 +83,20 @@ input:focus {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    color: #0186ff;
+    color: #888;
 }
 
 .loginLink {
-    margin-left: 10px;
     text-decoration: none;
     border: none;
-    padding: 12px 30px;
-    border-radius: 50px;
     cursor: pointer;
-    color: #fff;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .loginLink:hover {
-    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    color: #333;
 }
 .errorText{
     color: red;
@@ -175,3 +173,7 @@ input:focus {
     transform: translateY(-50%);
     cursor: pointer;
 }
+
+  ::placeholder {
+    color: #888;
+  }
