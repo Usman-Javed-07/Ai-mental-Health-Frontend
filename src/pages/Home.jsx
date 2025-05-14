@@ -48,11 +48,13 @@ export const Home = () => {
               )}
             </button>
           </div>
-          <p>{response}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nihil, excepturi delectus consequatur voluptatem, nobis neque rem cum sint ut modi corporis eveniet, laboriosam accusantium dolorum. Illum nam laudantium iure. Quidem modi dolorem quam saepe quaerat sit quasi aspernatur? Eum corrupti unde tenetur dolores cumque voluptatem dolore laborum! Odio, corporis quidem distinctio fuga earum expedita aut porro sequi? Reprehenderit dolor, cupiditate voluptatum nisi doloremque natus ab vero non repellat similique ipsam soluta vel reiciendis sunt tenetur eum, in, blanditiis voluptatibus? Asperiores, distinctio. Cupiditate accusantium ut perferendis non, eos esse animi similique possimus maiores ex nemo inventore at, recusandae doloribus officiis repellat, consequuntur repellendus incidunt fugiat fuga. Eaque ratione quis sint rem pariatur optio omnis commodi labore libero! Accusantium aut blanditiis inventore consequatur consectetur corrupti! Inventore necessitatibus porro quos eaque ab neque dolor commodi magni unde ipsa libero soluta officiis quae, officia pariatur sequi maiores natus saepe! Nulla inventore doloremque et repellendus, eligendi consectetur, ex facere, alias consequuntur corporis iste. Totam eos dolorum tenetur dignissimos rerum enim optio deserunt. Facere nesciunt reprehenderit cupiditate ullam quos, quidem, repellat illo quia soluta eaque, voluptates nihil. Aut eos id ducimus soluta fugit aperiam nam voluptate. Odit rem, excepturi ut saepe quae molestiae iusto quos.
-          </p>
+          
         </div>
       </div>
+      <div className={styles.aiResponse}>
+      <p>{response}
+          </p>
+          </div>
     </div>
   );
 };

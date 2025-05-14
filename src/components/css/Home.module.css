@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 40px;
 }
 .homeContainer {
@@ -10,8 +11,8 @@
     align-items: center;
     justify-content: center;
     padding: 40px;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 1px solid #dbd7d7;
+    margin-bottom: 30px;
 }
 .homeImage img {
     width: 200px;
@@ -22,11 +23,13 @@
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 20px;
-    border: 2px solid #000;
+     border: 1px solid #dbd7d7;
     padding: 5px 20px;
-    border-radius: 40px;
     margin-bottom: 20px;
+    justify-content: space-between;
+    max-width: 400px;
 }
+
 .aiInput {
     border: none;
 }
@@ -46,7 +49,7 @@
 .aiSendBtn {
     width: 25px;
     height: 25px;
-    color: blueviolet;
+    color: #333;
     
 }
 
@@ -62,4 +65,14 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.aiResponse  {
+ padding: 20px;
+}
+.aiResponse p {
+    letter-spacing: 1px; 
+  word-spacing: 4px;  
+  line-height: 1.6;
+     
 }
