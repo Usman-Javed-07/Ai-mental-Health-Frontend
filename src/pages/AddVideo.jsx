@@ -21,7 +21,7 @@ export const AddVideo = () => {
     formData.append("video", video);
 
     try {
-       await axios.post("http://localhost:5000/api/video/upload", formData, {
+      await axios.post("http://localhost:5000/api/video/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -58,7 +58,9 @@ export const AddVideo = () => {
             required
           />
         </div>
-        <button type="submit" className={styles.submitBtn}>Upload</button>
+        <button type="submit" className={styles.submitBtn}>
+          Upload
+        </button>
       </form>
       <ToastContainer position="top-right" />
     </div>

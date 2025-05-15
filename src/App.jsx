@@ -15,8 +15,8 @@ import { AddArticle } from "./pages/AddArticle";
 import Loader from "./components/Loader/Loader";
 import AdminRoute from "./components/Layouts/AdminRoute";
 
-import PrivateRoute from "./components/Layouts/PrivateRoute"; // Import PrivateRoute
-import { AuthProvider } from "./components/context/AuthContext"; // Import AuthProvider
+import PrivateRoute from "./components/Layouts/PrivateRoute";
+import { AuthProvider } from "./components/context/AuthContext";
 
 // eslint-disable-next-line react/prop-types
 const AppWithLoader = ({ children }) => {
@@ -78,10 +78,10 @@ const router = createBrowserRouter([
         path: "AddVideo",
         element: <AdminRoute element={<AddVideo />} />,
       },
-       {
+      {
         path: "AddArticle",
         element: <AdminRoute element={<AddArticle />} />,
-      }
+      },
     ],
   },
 ]);

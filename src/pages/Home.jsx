@@ -1,16 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
 import { LuSendHorizontal } from "react-icons/lu";
-import { FaSpinner } from "react-icons/fa"; // Spinner icon
+import { FaSpinner } from "react-icons/fa";
 import styles from "../components/css/Home.module.css";
 
 export const Home = () => {
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState("");
-  const [loading, setLoading] = useState(false); // <-- New loading state
+  const [loading, setLoading] = useState(false);
 
   const sendMessage = async () => {
-    setLoading(true); // start loading
+    setLoading(true);
     try {
       const res = await axios.post("http://localhost:5000/api/chat", {
         message,
@@ -20,7 +20,7 @@ export const Home = () => {
       console.error("Axios Error:", error);
       setResponse("Something went wrong.");
     } finally {
-      setLoading(false); // stop loading
+      setLoading(false);
     }
   };
 
@@ -38,23 +38,27 @@ export const Home = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="How can we help?"
-              disabled={loading} 
+              disabled={loading}
             />
-            <button onClick={sendMessage} className={styles.aiBtn} disabled={loading}>
+            <button
+              onClick={sendMessage}
+              className={styles.aiBtn}
+              disabled={loading}
+            >
               {loading ? (
-                <FaSpinner className={`${styles.spinner} ${styles.aiSendBtn}`} />
+                <FaSpinner
+                  className={`${styles.spinner} ${styles.aiSendBtn}`}
+                />
               ) : (
                 <LuSendHorizontal className={styles.aiSendBtn} />
               )}
             </button>
           </div>
-          
         </div>
       </div>
       <div className={styles.aiResponse}>
-      <p>{response}
-          </p>
-          </div>
+        <p>{response}</p>
+      </div>
     </div>
   );
 };

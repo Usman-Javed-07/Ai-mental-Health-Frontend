@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../components/css/video.module.css"; 
+import styles from "../components/css/video.module.css";
 
 export const Vedios = () => {
   const [videos, setVideos] = useState([]);
@@ -11,7 +11,9 @@ export const Vedios = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/video/list");
+        const response = await axios.get(
+          "http://localhost:5000/api/video/list"
+        );
         setVideos(response.data);
       } catch (err) {
         console.error("Error fetching videos:", err);
@@ -56,7 +58,10 @@ export const Vedios = () => {
               onClick={() => handleVideoClick(video)}
             >
               <video className={styles.videoPreview}>
-                <source src={`http://localhost:5000${video.videoUrl}`} type="video/mp4" />
+                <source
+                  src={`http://localhost:5000${video.videoUrl}`}
+                  type="video/mp4"
+                />
               </video>
               <h3 className={styles.videoTitle}>{video.name}</h3>
             </div>
@@ -71,7 +76,10 @@ export const Vedios = () => {
           </button>
           <h2 className={styles.playerTitle}>{currentVideo.name}</h2>
           <video className={styles.fullVideoPlayer} controls autoPlay>
-            <source src={`http://localhost:5000${currentVideo.videoUrl}`} type="video/mp4" />
+            <source
+              src={`http://localhost:5000${currentVideo.videoUrl}`}
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
         </div>

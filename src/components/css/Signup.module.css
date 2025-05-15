@@ -1,179 +1,175 @@
 .mainSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
 .signup h1 {
-    color: #333;
-    font-weight: bold;
-    text-transform: capitalize;
+  color: #333;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 .signupFormData {
-    display: flex;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .signupImage {
-    flex: 1;
-    height: 100%;
-    background-color: #222;  /*  this is the place where you can chnage the color theme*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  height: 100%;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signupImage img {
-    max-height: 300px;
-    width: auto;
+  max-height: 300px;
+  width: auto;
 }
 
 .signup {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
 input {
-    padding: 18px;
-    width: 100%;
-    max-width: 600px;
-    border: 1px solid #dbd7d7;
-    transition: all 0.3s ease;
+  padding: 18px;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #dbd7d7;
+  transition: all 0.3s ease;
 }
 
 input:focus {
-    border-color: #7a7878;
-    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
-    outline: none;
+  border-color: #7a7878;
+  box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
+  outline: none;
 }
 
 .signupBtn {
-    padding: 18px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    color: #fff;
-    background: #333;
-    transition: 0.4s ease-in-out;
+  padding: 18px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #fff;
+  background: #333;
+  transition: 0.4s ease-in-out;
 }
 
 .signupBtn:hover {
-    background: #111;
+  background: #111;
 }
 
 .haveAnAccount {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: #888;
 }
 
 .loginLink {
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    color: #000;
-    font-size: 18px;
-    font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .loginLink:hover {
-    color: #333;
+  color: #333;
 }
-.errorText{
-    color: red;
-    font-size: 14px; /* Optional: Adjust font size */
+.errorText {
+  color: red;
+  font-size: 14px;
 }
 
-
-
-/* Media Queries for Responsiveness */
 @media screen and (max-width: 1024px) {
-    .mainSection {
-        height: 110vh;
-        width: 100%;
-    }
+  .mainSection {
+    height: 110vh;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .mainSection {
-        display: flex;
-        flex-direction: column;
-    }
-    .signupFormData {
-        display: flex;
-        flex-direction: column;
-    }
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .signupFormData {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .signupFormData {
-        padding: 10px;
-        height: auto;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-    }
-    .mainSection {
-       padding: 20px;
-       height: auto;
-    }
-    .signup {
-        padding-top: 0;
-    }
-    .signupImage {
-        background-color: #fff;
-        padding: 20px;
-    }
-    .signupImage img {
-        height: 200px;
-        width: auto;
-    }
-    .signupHeader {
-        font-size: 18px;
-    }
-    .signupBtn {
-        font-size: 14px;
-    }
-    .haveAnAccount p {
-        font-size: 12px;
-    }
-    .loginLink {
-        font-size: 14px;
-    }
+  .signupFormData {
+    padding: 10px;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  .mainSection {
+    padding: 20px;
+    height: auto;
+  }
+  .signup {
+    padding-top: 0;
+  }
+  .signupImage {
+    background-color: #fff;
+    padding: 20px;
+  }
+  .signupImage img {
+    height: 200px;
+    width: auto;
+  }
+  .signupHeader {
+    font-size: 18px;
+  }
+  .signupBtn {
+    font-size: 14px;
+  }
+  .haveAnAccount p {
+    font-size: 12px;
+  }
+  .loginLink {
+    font-size: 14px;
+  }
 }
 
-
 .passwordContainer {
-    position: relative;
+  position: relative;
 }
 
 .eyeIcon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
-  ::placeholder {
-    color: #888;
-  }
+::placeholder {
+  color: #888;
+}

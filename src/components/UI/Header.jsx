@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { IoIosMenu } from "react-icons/io"; 
+import { IoIosMenu } from "react-icons/io";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { IoMdLogOut } from "react-icons/io";
 import styles from "../css/Header.module.css";
@@ -11,12 +10,10 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, loading } = useAuth();
 
-
-  // Toggle the menu open/close state
   const handleButtonToggle = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
-  if (loading) return null; // or return a loading spinner if desired
+  if (loading) return null;
 
   console.log("Logged in user:", user);
 
@@ -25,11 +22,7 @@ export const Header = () => {
       <div className={styles.logo}>
         <img src="/NavLogo.png" alt="website logo" />
       </div>
-      <ul
-        className={`${styles.navLinks} ${
-          isMenuOpen ? styles.active : ""
-        }`}
-      >
+      <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}>
         <li>
           <NavLink to="/Home">Home</NavLink>
         </li>
@@ -49,24 +42,25 @@ export const Header = () => {
           <NavLink to="/Articals">Articles</NavLink>
         </li>
 
-
-     {user?.role === "admin" && (
-  <>
-    <li>
-      <NavLink to="/AddMusic">Add New Music</NavLink>
-    </li>
-    <li>
-      <NavLink to="/AddVideo">Add New Video</NavLink>
-    </li>
-    <li>
-      <NavLink to="/AddArticle">Add New Article</NavLink>
-    </li>
-  </>
-)}
+        {user?.role === "admin" && (
+          <>
+            <li>
+              <NavLink to="/AddMusic">Add New Music</NavLink>
+            </li>
+            <li>
+              <NavLink to="/AddVideo">Add New Video</NavLink>
+            </li>
+            <li>
+              <NavLink to="/AddArticle">Add New Article</NavLink>
+            </li>
+          </>
+        )}
         <li>
-          <NavLink className={styles.logout} to="/"> <IoMdLogOut /> Logout</NavLink>
+          <NavLink className={styles.logout} to="/">
+            {" "}
+            <IoMdLogOut /> Logout
+          </NavLink>
         </li>
-        
       </ul>
       <div className={styles.hamburger} onClick={handleButtonToggle}>
         {isMenuOpen ? <IoCloseCircleOutline /> : <IoIosMenu />}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../components/css/Music.module.css"; 
+import styles from "../components/css/Music.module.css";
 
 export const Music = () => {
   const [musicList, setMusicList] = useState([]);
@@ -19,7 +19,6 @@ export const Music = () => {
       });
   }, []);
 
-  // Filter music based on search input
   const filteredMusic = musicList.filter((music) =>
     music.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -36,7 +35,6 @@ export const Music = () => {
 
   return (
     <div className={styles.musicContainer}>
-      {/* Search Bar */}
       <input
         type="text"
         placeholder="Search music..."
@@ -62,7 +60,6 @@ export const Music = () => {
         ))}
       </div>
 
-      {/* Full-Screen Music Player */}
       {currentMusic && (
         <div className={styles.fullScreenPlayer}>
           <button className={styles.closeButton} onClick={handleClosePlayer}>
@@ -74,11 +71,7 @@ export const Music = () => {
             className={styles.playerImage}
           />
           <h2 className={styles.playerTitle}>{currentMusic.name}</h2>
-          <audio
-            controls
-            autoPlay
-            className={styles.audioPlayer}
-          >
+          <audio controls autoPlay className={styles.audioPlayer}>
             <source
               src={`http://localhost:5000${currentMusic.audioUrl}`}
               type="audio/mp3"

@@ -7,8 +7,6 @@
   align-items: center;
   background: linear-gradient(to bottom, #f9f9f9, #fff);
 }
-
-/* Search Bar */
 .searchBar {
   width: 60%;
   padding: 18px;
@@ -20,7 +18,6 @@
   transition: all 0.3s ease;
 }
 
-/* Grid Layout */
 .videoGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -52,7 +49,6 @@
   color: #444;
 }
 
-/* Full-Screen Player */
 .fullScreenPlayer {
   position: fixed;
   top: 0;
@@ -101,7 +97,7 @@
 }
 
 input:focus {
-    border-color: #7a7878;
-    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
-    outline: none;
+  border-color: #7a7878;
+  box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
+  outline: none;
 }

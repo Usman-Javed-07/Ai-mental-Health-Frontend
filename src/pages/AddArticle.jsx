@@ -28,17 +28,15 @@ export const AddArticle = () => {
       return;
     }
 
- try {
-  await axios.post("http://localhost:5000/api/articles/add", formData);
-  toast.success("✅ Article added successfully!");
-  setError("");
-  setFormData({ title: "", content: "", category: "" });
-} catch (err) {
-  console.error("Article submission error:", err);
-  setError("❌ Failed to submit article.");
-}
-
-
+    try {
+      await axios.post("http://localhost:5000/api/articles/add", formData);
+      toast.success(" Article added successfully!");
+      setError("");
+      setFormData({ title: "", content: "", category: "" });
+    } catch (err) {
+      console.error("Article submission error:", err);
+      setError(" Failed to submit article.");
+    }
   };
 
   return (

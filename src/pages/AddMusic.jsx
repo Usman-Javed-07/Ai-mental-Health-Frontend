@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import styles from "../components/css/AddMusic.module.css";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 export const AddMusic = () => {
   const [name, setName] = useState("");
@@ -23,7 +23,7 @@ export const AddMusic = () => {
     formData.append("audio", audio);
 
     try {
-       await axios.post("http://localhost:5000/api/music/upload", formData, {
+      await axios.post("http://localhost:5000/api/music/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -70,7 +70,9 @@ export const AddMusic = () => {
             required
           />
         </div>
-        <button type="submit" className={styles.submitBtn}>Upload</button>
+        <button type="submit" className={styles.submitBtn}>
+          Upload
+        </button>
       </form>
       <ToastContainer position="top-right" />
     </div>

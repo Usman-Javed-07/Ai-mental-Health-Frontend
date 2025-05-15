@@ -34,12 +34,12 @@
   transition: border-color 0.3s ease;
 }
 textarea {
-  resize: vertical; 
+  resize: vertical;
 }
 textarea:focus {
-    border-color: #7a7878;
-    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
-    outline: none;
+  border-color: #7a7878;
+  box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
+  outline: none;
 }
 
 .button {
@@ -65,7 +65,7 @@ textarea:focus {
 }
 
 input:focus {
-    border-color: #7a7878;
-    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
-    outline: none;
+  border-color: #7a7878;
+  box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
+  outline: none;
 }

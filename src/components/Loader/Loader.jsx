@@ -1,4 +1,3 @@
-
 import "../css/Loader.module.css";
 
 const Loader = () => {

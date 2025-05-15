@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../components/css/Article.module.css"; 
+import styles from "../components/css/Article.module.css";
 
 export const Articals = () => {
   const [articles, setArticles] = useState([]);
@@ -21,9 +21,10 @@ export const Articals = () => {
     fetchArticles();
   }, []);
 
-  const filteredArticles = articles.filter((article) =>
-    article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    article.category.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredArticles = articles.filter(
+    (article) =>
+      article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (

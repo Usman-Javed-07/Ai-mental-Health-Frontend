@@ -13,7 +13,6 @@
   font-size: 1.4rem;
 }
 
-
 .heroSection {
   text-align: center;
   padding: 40px 20px;
@@ -44,16 +43,16 @@
 .inputField,
 .textArea {
   padding: 18px 200px;
-    width: 100%;
-    max-width: 600px;
-    border: 1px solid #dbd7d7;
-    transition: all 0.3s ease;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #dbd7d7;
+  transition: all 0.3s ease;
 }
 input,
 .textArea:focus {
-     border-color: #7a7878;
-    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
-    outline: none;
+  border-color: #7a7878;
+  box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
+  outline: none;
 }
 
 .textArea {
@@ -69,7 +68,6 @@ input,
   cursor: pointer;
   transition: 0.3s ease-in-out;
   background-color: #333;
-
 }
 
 .submitButton:hover {
@@ -97,7 +95,6 @@ input,
   color: #444;
   font-size: 1.4rem;
   padding-left: 10px;
-
 }
 .summaryPara {
   margin-top: 10px;
@@ -156,10 +153,9 @@ textarea:focus {
 }
 .twitIcon {
   color: #333 !important;
-  
 }
 .instaIcon {
-  color: #FD1D1D !important; 
+  color: #fd1d1d !important;
 }
 
 @media (max-width: 768px) {
@@ -203,22 +199,22 @@ textarea:focus {
   .contactImage img {
     width: 100%;
     height: auto;
-  }  
+  }
 }
 
 @media screen and (max-width: 500px) {
   .contactImage img {
     width: 100%;
     height: auto;
-  }  
+  }
   .inputField,
-.textArea {
-  padding: 18px 100px;
-}
+  .textArea {
+    padding: 18px 100px;
+  }
 }
 
 input:focus {
-    border-color: #7a7878;
-    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
-    outline: none;
+  border-color: #7a7878;
+  box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
+  outline: none;
 }

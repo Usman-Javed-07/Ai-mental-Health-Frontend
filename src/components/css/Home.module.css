@@ -1,64 +1,61 @@
 .homeSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
 }
 .homeContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    border: 1px solid #dbd7d7;
-    margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border: 1px solid #dbd7d7;
+  margin-bottom: 30px;
 }
 .homeImage img {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 .homeInput {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-    border: 1px solid #dbd7d7;
-    padding: 5px 20px;
-    margin-bottom: 20px;
-    justify-content: space-between;
-    max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border: 1px solid #dbd7d7;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  max-width: 400px;
 }
 
 .aiInput {
-    border: none !important;
-    box-shadow: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 .aiInput:active {
-    border: none;
+  border: none;
 }
 .aiInput:focus {
-    border-color: none;
-    box-shadow: none;
-    outline: none;
+  border-color: none;
+  box-shadow: none;
+  outline: none;
 }
 .aiBtn {
-    border: none;
-    background: transparent;
-  
+  border: none;
+  background: transparent;
 }
 .aiSendBtn {
-    width: 25px;
-    height: 25px;
-    color: #333;
-    
+  width: 25px;
+  height: 25px;
+  color: #333;
 }
 
 .spinner {
   animation: spin 1s linear infinite;
 }
 
-/* Simple spin animation */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -68,17 +65,16 @@
   }
 }
 
-.aiResponse  {
- padding: 20px;
+.aiResponse {
+  padding: 20px;
 }
 .aiResponse p {
-    letter-spacing: 1px; 
-  word-spacing: 4px;  
+  letter-spacing: 1px;
+  word-spacing: 4px;
   line-height: 1.6;
-     
 }
 input:focus {
-    border-color: #7a7878;
-    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
-    outline: none;
+  border-color: #7a7878;
+  box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
+  outline: none;
 }
