@@ -1,16 +1,18 @@
 import { useState } from "react";
 import axios from "axios";
+import styles from "../components/css/AddVideo.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const AddVideo = () => {
   const [name, setName] = useState("");
   const [video, setVideo] = useState(null);
-  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!name || !video) {
-      setMessage("Please fill in all fields.");
+      toast.error("Please fill in all fields.");
       return;
     }
 
@@ -19,28 +21,26 @@ export const AddVideo = () => {
     formData.append("video", video);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/video/upload", formData, {
+       await axios.post("http://localhost:5000/api/video/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
 
-      setMessage("Video uploaded successfully!");
-      console.log(response.data);
+      toast.success("Video uploaded successfully!");
       setName("");
       setVideo(null);
     } catch (error) {
       console.error("Upload error:", error.response?.data || error.message);
-      setMessage("Error uploading video.");
+      toast.error("Error uploading video.");
     }
   };
 
   return (
-    <div>
-      <h2>Upload New Video</h2>
-      {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Upload New Video</h2>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <div className={styles.formGroup}>
           <label>Video Name:</label>
           <input
             type="text"
@@ -49,7 +49,7 @@ export const AddVideo = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles.formGroup}>
           <label>Upload Video:</label>
           <input
             type="file"
@@ -58,8 +58,9 @@ export const AddVideo = () => {
             required
           />
         </div>
-        <button type="submit">Upload</button>
+        <button type="submit" className={styles.submitBtn}>Upload</button>
       </form>
+      <ToastContainer position="top-right" />
     </div>
   );
 };

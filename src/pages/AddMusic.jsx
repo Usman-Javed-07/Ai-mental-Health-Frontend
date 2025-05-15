@@ -1,19 +1,19 @@
 import { useState } from "react";
 import axios from "axios";
-
-
+import styles from "../components/css/AddMusic.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AddMusic = () => {
   const [name, setName] = useState("");
   const [image, setImage] = useState(null);
   const [audio, setAudio] = useState(null);
-  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!name || !image || !audio) {
-      setMessage("Please fill in all fields.");
+      toast.error("Please fill in all fields.");
       return;
     }
 
@@ -23,29 +23,27 @@ export const AddMusic = () => {
     formData.append("audio", audio);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/music/upload", formData, {
+       await axios.post("http://localhost:5000/api/music/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
 
-      setMessage("Music uploaded successfully!");
-      console.log(response.data);
+      toast.success("Music uploaded successfully!");
       setName("");
       setImage(null);
       setAudio(null);
     } catch (error) {
       console.error("Upload error:", error.response?.data || error.message);
-      setMessage("Error uploading music.");
+      toast.error("Error uploading music.");
     }
   };
 
   return (
-    <div>
-      <h2>Upload New Music</h2>
-      {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Upload New Music</h2>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <div className={styles.formGroup}>
           <label>Music Name:</label>
           <input
             type="text"
@@ -54,7 +52,7 @@ export const AddMusic = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles.formGroup}>
           <label>Upload Image:</label>
           <input
             type="file"
@@ -63,7 +61,7 @@ export const AddMusic = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles.formGroup}>
           <label>Upload Audio:</label>
           <input
             type="file"
@@ -72,8 +70,9 @@ export const AddMusic = () => {
             required
           />
         </div>
-        <button type="submit">Upload</button>
+        <button type="submit" className={styles.submitBtn}>Upload</button>
       </form>
+      <ToastContainer position="top-right" />
     </div>
   );
 };

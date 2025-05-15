@@ -1,5 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
+import styles from "../components/css/AddArticle.module.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const AddArticle = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +11,6 @@ export const AddArticle = () => {
     category: "",
   });
 
-  const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
@@ -26,60 +28,61 @@ export const AddArticle = () => {
       return;
     }
 
-    try {
-      const res = await axios.post("http://localhost:5000/api/articles/add", formData);
-      setMessage(res.data.message);
-      setError("");
-      setFormData({ title: "", content: "", category: "" });
-    } catch (err) {
-      console.error("Article submission error:", err);
-      setError("Failed to submit article.");
-      setMessage("");
-    }
+ try {
+  await axios.post("http://localhost:5000/api/articles/add", formData);
+  toast.success("✅ Article added successfully!");
+  setError("");
+  setFormData({ title: "", content: "", category: "" });
+} catch (err) {
+  console.error("Article submission error:", err);
+  setError("❌ Failed to submit article.");
+}
+
+
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
-      <h2>Add New Mental Health Article</h2>
+    <div className={styles.formContainer}>
+      <ToastContainer position="top-right" />
+      <h2 className={styles.heading}>Add New Mental Health Article</h2>
 
-      {message && <p style={{ color: "green" }}>{message}</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>}
 
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "15px" }}>
+        <div className={styles.formGroup}>
           <label>Title:</label>
           <input
             type="text"
             name="title"
             value={formData.title}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
+            className={styles.input}
           />
         </div>
 
-        <div style={{ marginBottom: "15px" }}>
+        <div className={styles.formGroup}>
           <label>Category (e.g., stress, anxiety, depression):</label>
           <input
             type="text"
             name="category"
             value={formData.category}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
+            className={styles.input}
           />
         </div>
 
-        <div style={{ marginBottom: "15px" }}>
+        <div className={styles.formGroup}>
           <label>Content:</label>
           <textarea
             name="content"
             value={formData.content}
             onChange={handleChange}
             rows={8}
-            style={{ width: "100%", padding: "8px" }}
+            className={styles.textarea}
           />
         </div>
 
-        <button type="submit" style={{ padding: "10px 20px" }}>
+        <button type="submit" className={styles.button}>
           Submit Article
         </button>
       </form>
