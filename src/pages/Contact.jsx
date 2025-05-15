@@ -1,10 +1,13 @@
+/* eslint-disable no-unused-vars */
 import styles from "../components/css/Contact.module.css";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -32,12 +35,10 @@ export const Contact = () => {
         "gdoXkAfr08-uKcK0y" // Replace with your EmailJS user ID
       )
       .then(
-        // eslint-disable-next-line no-unused-vars
         (response) => {
           toast.success("Message sent successfully!");
           setFormData({ name: "", email: "", message: "" });
         },
-        // eslint-disable-next-line no-unused-vars
         (error) => {
           toast.error("Failed to send message. Please try again.");
         }
@@ -98,7 +99,7 @@ export const Contact = () => {
             <strong>Phone:</strong> +1 234 567 890
           </p>
           <p>
-            <strong>Address:</strong>NFC Institute of Engineering and Technology
+            <strong>Address:</strong> NFC Institute of Engineering and Technology
           </p>
         </div>
 
@@ -146,6 +147,7 @@ export const Contact = () => {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
