@@ -73,3 +73,9 @@
   font-style: italic;
   color: #777;
 }
+
+input:focus {
+    border-color: #7a7878;
+    box-shadow: 0 0 8px rgba(222, 225, 225, 0.8);
+    outline: none;
+}
