@@ -3,16 +3,15 @@
   margin: 40px auto;
   padding: 30px;
   background-color: #fefefe;
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  border: 1px solid #dbd7d7;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .heading {
-  font-size: 24px;
+  font-size: 1.4rem;
   margin-bottom: 24px;
   text-align: center;
-  color: #333;
+  color: #444;
 }
 
 .formGroup {
@@ -28,33 +27,30 @@
 .input,
 .textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 18px;
+  border: 1px solid #dbd7d7;
   font-size: 15px;
   outline: none;
   transition: border-color 0.3s ease;
 }
-
-.input:focus,
-.textarea:focus {
-  border-color: #0077ff;
+textarea {
+  resize: vertical; 
 }
 
+
 .button {
-  padding: 12px 20px;
+  padding: 18px 20px;
   font-size: 16px;
-  background-color: #0077ff;
+  background-color: #444;
   color: white;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
   width: 100%;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #005fcc;
+  background-color: #000;
 }
 
 .error {

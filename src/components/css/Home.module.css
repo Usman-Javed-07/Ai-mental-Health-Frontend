@@ -23,7 +23,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 20px;
-     border: 1px solid #dbd7d7;
+    border: 1px solid #dbd7d7;
     padding: 5px 20px;
     margin-bottom: 20px;
     justify-content: space-between;
