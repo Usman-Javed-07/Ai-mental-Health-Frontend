@@ -3,14 +3,13 @@
   margin: 40px auto;
   padding: 24px;
   background: #fff;
-  border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .title {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #444;
 }
 
 .form {
@@ -32,23 +31,21 @@ label {
 input[type="text"],
 input[type="file"] {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 18px;
+  border: 1px solid #dbd7d7;
   font-size: 14px;
 }
 
 .submitBtn {
-  background-color: #4CAF50;
+  background-color: #444;
   color: white;
-  padding: 12px;
+  padding: 18px;
   border: none;
-  border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .submitBtn:hover {
-  background-color: #45a049;
+  background-color: #000;
 }
